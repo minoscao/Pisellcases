@@ -58,6 +58,7 @@ function cleanItem(raw,id){
   for(const [field,limit]of Object.entries({title:160,address:500,country:100,city:100,continent:40,type:40,description:2000,locationNote:500,locationPrecision:100,googlePlaceId:300}))item[field]=typeof raw[field]==='string'?raw[field].trim().slice(0,limit):'';
   for(const field of ['year','area','lat','lon'])item[field]=typeof raw[field]==='number'?raw[field]:null;
   for(const field of ['sourceUrl','googleMapsUrl','coordinateSource'])item[field]=safeLink(raw[field]);
+  item.googlePhotoSelections=Array.isArray(raw.googlePhotoSelections)?[...new Set(raw.googlePhotoSelections.filter(index=>Number.isInteger(index)&&index>=0&&index<10))]:[];
   const validPhoto=p=>typeof p==='string'&&(/^(?:\/)?media\/photos\/[a-f0-9-]+\.(jpg|png|webp)$/.test(p)||seed.items.some(s=>s.photos.includes(p)));
   if(!Array.isArray(raw.photos)||raw.photos.some(p=>!validPhoto(p)))throw error('请重新上传图片，不能使用浏览器临时图片或外部文件路径');
   item.photos=[...new Set(raw.photos)];item.cover=raw.cover;item.industry=typeLabel(item.type);

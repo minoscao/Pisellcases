@@ -5,7 +5,7 @@ export const caseTypes = [
 export const continentOptions = ['Asia','Europe','North America','South America','Africa','Oceania'];
 export const photoLimits = {count:24, bytes:10*1024*1024, types:['image/jpeg','image/png','image/webp']};
 export const typeLabel = value => caseTypes.find(t=>t.value===value)?.label || '';
-export function newCase(){const id=crypto.randomUUID();return {id,customerId:id,title:'',address:'',country:'',city:'',continent:'Asia',lat:null,lon:null,year:null,area:null,type:'',industry:'',status:'active',photos:[],cover:null,description:'',googleMapsUrl:'',googlePlaceId:'',revision:0};}
+export function newCase(){const id=crypto.randomUUID();return {id,customerId:id,title:'',address:'',country:'',city:'',continent:'Asia',lat:null,lon:null,year:null,area:null,type:'',industry:'',status:'active',photos:[],cover:null,description:'',googleMapsUrl:'',googlePlaceId:'',googlePhotoSelections:[],revision:0};}
 export function caseErrors(item){
   const errors={};
   if(!item.title?.trim()||item.title.length>160)errors.title='请输入项目名称，最多 160 字';
