@@ -41,7 +41,7 @@ npx wrangler d1 migrations apply pisell-cases --remote
 
 保持 `GET /api/cases`、`/api/config`、`/media/*`、`/atlas.html` 和展示资源可由访客读取，避免访客浏览 iframe 时被要求登录。地图读取接口和写入接口路径不同。
 
-填写 `wrangler.jsonc` 中的 `ACCESS_TEAM_DOMAIN`（如 `your-team.cloudflareaccess.com`）和 `ACCESS_AUD`（此应用的 AUD）。Worker 会验证登录凭证签名、签发方、受众和有效期；不是仅检查某个请求头是否存在。未配置管理登录时写入默认关闭，访客仍可浏览已有案例。
+在 Cloudflare Worker 的「设置 → 变量和机密」中填写 `ACCESS_TEAM_DOMAIN`（如 `your-team.cloudflareaccess.com`）和 `ACCESS_AUD`（此应用的 AUD）。Worker 会验证登录凭证签名、签发方、受众和有效期；不是仅检查某个请求头是否存在。未配置管理登录时写入默认关闭，访客仍可浏览已有案例。`keep_vars: true` 会保留在控制台配置的变量，后续从 GitHub 部署不会将它们清空。
 
 本地验证可以复制 `.dev.vars.example` 为 `.dev.vars`，然后执行：
 
@@ -54,9 +54,9 @@ npm run dev:cloudflare
 
 ## 4. Google Maps
 
-在 Google Cloud 项目中启用 Maps JavaScript API 和 Places API (New)，配置浏览器密钥，填入 `GOOGLE_MAPS_API_KEY`。启用所需的计费设置，并将密钥限制到管理页面所在域名及这两项服务。浏览器地图密钥会下发给网页，不能在这里填写服务器密钥。
+在 Google Cloud 项目中启用 Maps JavaScript API 和 Places API (New)，配置浏览器密钥，在 Worker 的「设置 → 变量和机密」中填入 `GOOGLE_MAPS_API_KEY`。启用所需的计费设置，并将密钥限制到管理页面所在域名及这两项服务。浏览器地图密钥会下发给网页，不能在这里填写服务器密钥。
 
-如有自己的地图样式 ID，可填写 `GOOGLE_MAPS_MAP_ID`。未填写时使用 Google 的演示 Map ID，正式运行建议设置自己的地图 ID。
+如有自己的地图样式 ID，可在同一位置填写 `GOOGLE_MAPS_MAP_ID`。未填写时使用 Google 的演示 Map ID，正式运行建议设置自己的地图 ID。
 
 配置后，录入页通过 Google 的 `PlaceAutocompleteElement` 搜索门店，选择结果会填写地址、国家、城市、经纬度和地点 ID，并在 Google 地图显示位置。可拖动标记调整坐标。
 

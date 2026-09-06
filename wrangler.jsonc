@@ -6,19 +6,27 @@
   "assets": {
     "directory": "./pisell-web/build",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*", "/media/*", "/admin", "/admin/*", "/admin.html"]
+    "run_worker_first": [
+      "/api/*",
+      "/media/*",
+      "/admin",
+      "/admin/*",
+      "/admin.html"
+    ]
   },
-  "d1_databases": [{
-    "binding": "DB",
-    "database_name": "pisell-cases",
-    "database_id": "00000000-0000-0000-0000-000000000000",
-    "migrations_dir": "cloudflare/migrations"
-  }],
-  "r2_buckets": [{"binding": "PHOTOS", "bucket_name": "pisell-case-photos"}],
-  "vars": {
-    "ACCESS_TEAM_DOMAIN": "",
-    "ACCESS_AUD": "",
-    "GOOGLE_MAPS_API_KEY": "",
-    "GOOGLE_MAPS_MAP_ID": ""
-  }
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "pisell-cases",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "cloudflare/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "PHOTOS",
+      "bucket_name": "pisell-case-photos"
+    }
+  ],
+  "keep_vars": true
 }
