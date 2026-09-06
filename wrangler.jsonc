@@ -3,6 +3,9 @@
   "name": "pisell-cases",
   "main": "cloudflare/worker.mjs",
   "compatibility_date": "2026-09-01",
+  "build": {
+    "command": "npm run build"
+  },
   "assets": {
     "directory": "./pisell-web/build",
     "binding": "ASSETS",
@@ -17,15 +20,12 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "pisell-cases",
-      "database_id": "00000000-0000-0000-0000-000000000000",
       "migrations_dir": "cloudflare/migrations"
     }
   ],
   "r2_buckets": [
     {
-      "binding": "PHOTOS",
-      "bucket_name": "pisell-case-photos"
+      "binding": "PHOTOS"
     }
   ],
   "keep_vars": true

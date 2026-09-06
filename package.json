@@ -10,6 +10,7 @@
     "preview:web": "node scripts/preview-pisell.cjs",
     "dev:cloudflare": "npm run build:web && wrangler dev",
     "deploy:cloudflare": "npm run build:web && wrangler deploy",
+    "deploy": "npm run deploy:cloudflare",
     "test": "node --test tests/*.test.mjs",
     "test:web": "node --test tests/*.test.mjs"
   },

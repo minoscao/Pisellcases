@@ -2,8 +2,13 @@ import {createRemoteJWKSet,jwtVerify} from 'jose';
 import seed from '../src/web/data/customers.json' with {type:'json'};
 import {caseErrors,photoLimits,typeLabel} from '../src/web/case-model.mjs';
 const keySets=new Map(),seedItems=new Map(seed.items.map(item=>[item.id,item]));
+let schemaReady;
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 const error=(message,status=400)=>Object.assign(new Error(message),{status});
+function ensureSchema(env){
+  schemaReady ||= env.DB.prepare('CREATE TABLE IF NOT EXISTS case_records (id TEXT PRIMARY KEY, data TEXT NOT NULL CHECK (json_valid(data)), revision INTEGER NOT NULL DEFAULT 1, updated_at TEXT NOT NULL)').run().catch(cause=>{schemaReady=undefined;throw cause;});
+  return schemaReady;
+}
 export async function authorize(request,env){
   if(env.LOCAL_DEV==='true'&&['127.0.0.1','localhost','[::1]'].includes(new URL(request.url).hostname))return;
   if(!env.ACCESS_TEAM_DOMAIN||!env.ACCESS_AUD)throw error('管理登录尚未配置，请先完成 Cloudflare Access 设置',503);
@@ -35,8 +40,9 @@ function cleanItem(raw,id){
   const errors=caseErrors(item);if(Object.keys(errors).length)throw error(Object.values(errors).join('；'));
   return item;
 }
-async function cases(env){const {results}=await env.DB.prepare('SELECT id, data, revision FROM case_records ORDER BY updated_at DESC').all();const merged=new Map([...seedItems].map(([id,item])=>[id,{...item,revision:0}]));for(const row of results)merged.set(row.id,{...JSON.parse(row.data),revision:row.revision});return [...merged.values()];}
+async function cases(env){await ensureSchema(env);const {results}=await env.DB.prepare('SELECT id, data, revision FROM case_records ORDER BY updated_at DESC').all();const merged=new Map([...seedItems].map(([id,item])=>[id,{...item,revision:0}]));for(const row of results)merged.set(row.id,{...JSON.parse(row.data),revision:row.revision});return [...merged.values()];}
 async function putCase(request,env,id){
+  await ensureSchema(env);
   if(!/^[a-zA-Z0-9_-]{1,160}$/.test(id))throw error('项目编号不正确');
   if(!request.headers.get('Content-Type')?.startsWith('application/json'))throw error('请使用项目表单保存');
   let body;try{body=JSON.parse(new TextDecoder().decode(await readBytes(request,100*1024)));}catch(e){if(e.status)throw e;throw error('项目信息读取失败');}
@@ -80,5 +86,5 @@ export default {async fetch(request,env){
     const headers=new Headers(response.headers);headers.set('X-Content-Type-Options','nosniff');
     if(path.startsWith('/admin')){headers.set('Cache-Control','no-store');headers.set('Content-Security-Policy',"frame-ancestors 'self'");}
     return new Response(response.body,{status:response.status,headers});
-  }catch(e){return json({error:e.status?e.message:'服务暂时不可用，请检查存储配置后重试'},e.status||503);}
+  }catch(e){console.error('Pisell API error:',e);return json({error:e.status?e.message:'服务暂时不可用，请检查存储配置后重试'},e.status||503);}
 }};

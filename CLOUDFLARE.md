@@ -2,7 +2,32 @@
 
 项目使用 Workers 提供网页和接口、D1 保存项目资料、R2 保存新增图片。初始的 28 个展示位置与 45 张图片随网页部署，不需要先导入数据库。D1 保存新增内容和对初始案例的修改，同一份内容供管理页面和嵌入地图读取。
 
-## 1. 安装与构建
+## 1. 连接 GitHub 后先设置构建命令
+
+在 Cloudflare Dashboard 的 **Workers & Pages → 你的 Worker → Settings → Builds** 中填写：
+
+| 设置 | 值 |
+| --- | --- |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Root directory | 留空 |
+| Production branch | `main` |
+
+这是必要设置。Workers Builds 的 Build command 在控制台单独配置，不会读取 `wrangler.jsonc` 的 `build.command`。之前失败正是因为此栏为空，导致 `pisell-web/build` 没有生成。
+
+## 2. 首次部署会创建存储
+
+本项目在首次成功部署时让 Cloudflare 自动创建一个 D1 数据库和一个 R2 图片桶，并绑定为 `DB` 与 `PHOTOS`。不要在 `wrangler.jsonc` 中填写全零数据库 ID。Worker 在第一次读取或保存案例时创建 `case_records` 表；已有的迁移文件也保留给之后的显式迁移流程。
+
+部署成功后，在 Worker 的 **Settings → Bindings** 确认可以看到：
+
+- `DB`：D1 database
+- `PHOTOS`：R2 bucket
+- `ASSETS`：静态网站资源
+
+项目资料通过 `PUT /api/cases/:id` 写入 D1 的 `case_records` 表；图片通过 `POST /api/photos` 写入 R2，再由 `/media/photos/...` 读取。表单只有数据库服务可用时才会启用「保存项目」。
+
+## 3. 本地安装与构建
 
 需要 Node.js 22 或更新版本。
 
@@ -13,9 +38,9 @@ npm run build:web
 
 静态预览：`npm run preview:web`，打开 `http://127.0.0.1:4191/admin.html?new=1`。此模式仅预览，保存按钮会提示尚未连接服务。不会使用浏览器数据库。
 
-## 2. 创建存储
+## 4. 手动创建存储（可选）
 
-登录自己的 Cloudflare 账号，并执行：
+如果你要使用已有的 D1 或 R2 资源，登录自己的 Cloudflare 账号，并执行：
 
 ```sh
 npx wrangler login
@@ -23,7 +48,7 @@ npx wrangler d1 create pisell-cases
 npx wrangler r2 bucket create pisell-case-photos
 ```
 
-将创建数据库返回的真实 `database_id` 填入 `wrangler.jsonc`。若使用已有资源，同时修改资源名称。不要使用示例中的全零数据库编号进行生产部署。
+将创建数据库返回的真实 `database_id` 与资源名称填入 `wrangler.jsonc`。默认的自动创建方案不需要这一步。
 
 ```sh
 npx wrangler d1 migrations apply pisell-cases --remote
@@ -31,7 +56,7 @@ npx wrangler d1 migrations apply pisell-cases --remote
 
 图片通过 Worker 校验后写入 R2，不需要向浏览器提供 R2 访问密钥。图片采用随机名称，通过 `/media/photos/...` 读取。单张限制 10 MB，单个项目最多 24 张，支持 JPG、PNG、WebP。
 
-## 3. 管理登录
+## 5. 管理登录
 
 在 Cloudflare Zero Trust 中创建一个自托管 Access 应用，仅允许负责维护的人员登录。将同一应用覆盖到站点的下列路径：
 
@@ -52,7 +77,7 @@ npm run dev:cloudflare
 
 `LOCAL_DEV=true` 仅用于本机回环地址，不能填入生产环境配置。`.dev.vars` 已排除在 Git 之外。
 
-## 4. Google Maps
+## 6. Google Maps
 
 在 Google Cloud 项目中启用 Maps JavaScript API 和 Places API (New)，配置浏览器密钥，在 Worker 的「设置 → 变量和机密」中填入 `GOOGLE_MAPS_API_KEY`。启用所需的计费设置，并将密钥限制到管理页面所在域名及这两项服务。浏览器地图密钥会下发给网页，不能在这里填写服务器密钥。
 
@@ -64,7 +89,7 @@ npm run dev:cloudflare
 
 参考：[Google 地点自动补全](https://developers.google.com/maps/documentation/javascript/place-autocomplete-new)、[Cloudflare 登录验证](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/)、[Workers 静态资源](https://developers.cloudflare.com/workers/static-assets/)。
 
-## 5. 发布
+## 7. 发布
 
 ```sh
 npm run deploy:cloudflare
