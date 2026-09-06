@@ -16,8 +16,8 @@ function page(path,database,storage='cloudflare',authenticated=true){
     if(options.method==='PUT'){const {item,revision}=JSON.parse(options.body);assert.ok(item.photos.every(p=>p.startsWith('/media/')));database.set(item.id,{...item,revision:revision+1});return Response.json({item:database.get(item.id)});}
     return Response.json({items:[...seed.items,...database.values()]});
   };
-  w.XMLHttpRequest=class{upload={};open(method,url){assert.equal(method,'POST');assert.match(String(url),/api\/photos/);}setRequestHeader(){}send(){this.status=201;this.responseText=JSON.stringify({url:'/media/photos/'+crypto.randomUUID()+'.png'});queueMicrotask(()=>this.onload());}};
-  w.structuredClone=structuredClone;w.createImageBitmap=async()=>({close(){}});w.URL.createObjectURL=()=> 'blob:https://test.example/'+crypto.randomUUID();w.URL.revokeObjectURL=()=>{};w.eval(script);return dom;
+  w.XMLHttpRequest=class{upload={};open(method,url){assert.equal(method,'POST');assert.match(String(url),/api\/photos/);}setRequestHeader(name,value){if(name==='Content-Type')assert.equal(value,'image/jpeg');}send(){this.status=201;this.responseText=JSON.stringify({url:'/media/photos/'+crypto.randomUUID()+'.png'});queueMicrotask(()=>this.onload());}};
+  w.structuredClone=structuredClone;w.createImageBitmap=async()=>({width:2400,height:1200,close(){}});w.HTMLCanvasElement.prototype.getContext=()=>({fillStyle:'',fillRect(){},drawImage(){}});w.HTMLCanvasElement.prototype.toBlob=function(callback,type,quality){assert.equal(type,'image/jpeg');assert.equal(quality,.6);queueMicrotask(()=>callback(new w.Blob([new Uint8Array([1,2,3])],{type})));};w.URL.createObjectURL=()=> 'blob:https://test.example/'+crypto.randomUUID();w.URL.revokeObjectURL=()=>{};w.eval(script);return dom;
 }
 test('full-page form saves uploaded photos through the service and reloads shared records',async()=>{
   const database=new Map(),dom=page('admin.html?new=1',database),w=dom.window,$=s=>w.document.querySelector(s);
