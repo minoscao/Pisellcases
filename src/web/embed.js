@@ -1,0 +1,2 @@
+// <script src="/pisell-atlas/embed.js" data-height="760" defer></script>
+(()=>{const script=document.currentScript,frame=document.createElement('iframe');frame.src=new URL('atlas.html?embed=1',script.src);frame.title='Pisell global case explorer';frame.loading='lazy';frame.allow='fullscreen';frame.style.cssText=`display:block;width:100%;height:${Math.max(600,Number(script.dataset.height)||760)}px;border:0;border-radius:20px;`;script.after(frame);})();

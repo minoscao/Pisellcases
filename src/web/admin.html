@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><title>案例管理 · Pisell</title>
+  <link rel="icon" href="assets/pisell-logo.png"><link rel="stylesheet" href="pisell.css"><link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page">
+  <header class="admin-header"><a href="admin.html" class="admin-brand" aria-label="Pisell 案例库"><img src="assets/pisell-logo.png" alt="Pisell"><span>案例管理</span></a><a class="button" href="atlas.html?editor=1">查看地图 ↗</a></header>
+  <main class="admin-main">
+    <div id="page-message" class="page-message" role="status" aria-live="polite">正在加载案例库…</div>
+    <section id="library-view" hidden>
+      <div class="page-heading"><div><p class="eyebrow">CASE LIBRARY</p><h1>项目合集 <span id="case-count"></span></h1></div><a class="button primary" href="admin.html?new=1">＋ Add new</a></div>
+      <div class="library-toolbar"><label class="sr-only" for="project-search">搜索项目</label><input id="project-search" type="search" placeholder="搜索项目、城市或地址"><label class="sr-only" for="type-filter">项目类型</label><select id="type-filter"><option value="">所有类型</option></select></div>
+      <div id="project-list" class="project-list"></div><p id="list-empty" hidden>没有找到项目，换个关键词试试。</p>
+    </section>
+    <section id="form-view" hidden>
+      <a class="back-link" href="admin.html">← 返回项目合集</a>
+      <div class="page-heading"><div><p class="eyebrow">CASE DETAILS</p><h1 id="form-title">新增项目</h1></div><span id="save-state" class="state-label">尚未保存</span></div>
+      <form id="case-form" novalidate>
+        <div id="form-errors" class="error-summary" tabindex="-1" role="alert" hidden></div>
+        <div class="form-layout">
+          <div class="form-sections">
+            <section class="form-section"><h2><span>01</span> 项目资料</h2><div id="basic-fields" class="field-grid"></div></section>
+            <section class="form-section"><h2><span>02</span> 项目位置</h2>
+              <div id="google-search" class="field" hidden><span class="field-label">搜索 Google Maps</span><div id="google-autocomplete"></div></div>
+              <div class="field"><label for="google-link">Google Maps 地点链接</label><div class="input-action"><input id="google-link" type="url" placeholder="粘贴 Google Maps 的完整地点链接"><button class="button" id="read-location" type="button">读取位置</button></div><p id="location-message" class="field-hint" role="status">支持完整地点链接；也可以手动填写地址和经纬度。</p></div>
+              <div id="location-fields" class="field-grid"></div>
+              <div class="location-status"><span id="pin-status">尚未定位</span><a id="google-open" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">在 Google Maps 中打开 ↗</a></div>
+              <div id="google-map" class="entry-map" hidden></div>
+              <details class="form-help"><summary>如何确认地图位置？</summary><p>配置 Google Maps 后，可以搜索并选择门店，自动填写地址和坐标。也可在 Google Maps 右键门店位置，复制经纬度，填写到下面。地图视角中心不会被当作门店位置。</p><div id="coordinate-fields" class="field-grid"></div></details>
+            </section>
+            <section class="form-section"><div class="section-heading"><h2><span>03</span> 项目图片</h2><span id="photo-count">0 / 24</span></div>
+              <div id="drop-zone" class="drop-zone"><strong>添加项目图片</strong><div class="upload-actions"><label class="button" for="photo-upload">＋ 选择图片<input id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp" multiple></label><label class="button" for="camera-upload">◎ 拍摄照片<input id="camera-upload" type="file" accept="image/*" capture="environment"></label></div><span>也可拖动图片到这里 · JPG、PNG、WebP · 每张不超过 10 MB</span></div>
+              <progress id="upload-progress" max="100" value="0" hidden aria-label="图片上传进度"></progress><p id="upload-message" role="status" class="field-hint"></p><p id="error-photos" class="field-error" hidden></p>
+              <div id="photo-grid" class="photo-grid"></div>
+            </section>
+          </div>
+          <aside class="preview-column"><section class="form-section preview-section"><p class="eyebrow">PROJECT PREVIEW</p><h2>展示预览</h2><div id="project-preview"></div><p class="field-hint">首张展示图片可在下方设为封面。</p></section><p id="storage-note" class="storage-note"></p></aside>
+        </div>
+        <footer class="form-actions"><span id="action-status" role="status">填写资料后保存</span><div><a class="button" href="admin.html">返回列表</a><button type="submit" class="button primary" id="save-project">保存项目</button></div></footer>
+      </form>
+    </section>
+  </main>
+  <dialog id="photo-viewer" class="photo-viewer"><button type="button" class="button" id="close-photo" aria-label="关闭图片">×</button><div class="photo-viewer-stage"><img id="viewer-image" alt="项目图片预览"></div></dialog>
+  <script src="admin.js" defer></script>
+</body>
+</html>

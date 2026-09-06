@@ -1,0 +1,1003 @@
+{
+  "items": [
+    {
+      "id": "gotcha",
+      "title": "Gotcha JP",
+      "customerId": "gotcha",
+      "status": "active",
+      "country": "Japan",
+      "continent": "Asia",
+      "city": "Tokyo",
+      "industry": "Tea & cafe",
+      "address": "1F, 23-11 Udagawacho, Shibuya, Tokyo 150-0042",
+      "lat": 35.6600478,
+      "lon": 139.6995875,
+      "locationPrecision": "Venue",
+      "locationNote": "Shibuya location · Official product imagery",
+      "description": "Shibuya location · Official product imagery",
+      "photos": [
+        "assets/customers/gotcha-1.jpg"
+      ],
+      "cover": "assets/customers/gotcha-1.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/100006/dd3aa7bb632124fccb2cb9ea5ebc15b02026_03_05_17_50_22_141_05644301617__1048_1048__.png?x-oss-process=image/resize,w_750,image/format,webp/interlace,1,image/quality,Q_60/sharpen,90",
+          "source": "https://gotcha.co.jp/ja/pages/contact?scene=1004",
+          "label": "Contact Us"
+        }
+      ],
+      "sourceUrl": "https://gotcha.co.jp/ja/pages/contact?scene=1004",
+      "coordinateSource": "https://www.google.com/maps/place/GotchaShibuya/data=!4m7!3m6!1s0x60188d2d14725c39:0xee035e11828c0677!8m2!3d35.6600478!4d139.6995875",
+      "year": null,
+      "area": null,
+      "type": "restaurant"
+    },
+    {
+      "id": "zgy",
+      "title": "朱光玉 · Zhu Guang Yu",
+      "customerId": "zgy",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Hot pot",
+      "address": "422 Queen Street, Melbourne VIC 3000",
+      "lat": -37.8086072,
+      "lon": 144.9580796,
+      "locationPrecision": "Address",
+      "locationNote": "Melbourne location · Official menu imagery",
+      "description": "Melbourne location · Official menu imagery",
+      "photos": [
+        "assets/customers/zgy-4.jpg",
+        "assets/customers/zgy-5.jpg",
+        "assets/customers/zgy-6.jpg"
+      ],
+      "cover": "assets/customers/zgy-4.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/9112/f2384630884821b35dc5af76e23676c92025_12_11_10_37_15_819_01629156984__1895_2400__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://www.zgyhotpot.com.au/en/",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/9112/54fedaf2bc58b5e797cd3ae3d554c1102025_12_11_10_06_07_487_07938454213__1895_2400__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://www.zgyhotpot.com.au/en/",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/9112/4b65ed4bcb0a14efc71a2aa475d4a9892025_12_11_10_05_53_073_00445112152__1895_2400__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://www.zgyhotpot.com.au/en/",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        }
+      ],
+      "sourceUrl": "https://www.zgyhotpot.com.au/en/",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=422+Queen+Street+Melbourne+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "restaurant"
+    },
+    {
+      "id": "funtovia",
+      "title": "Funtovia / Yifun Life AU",
+      "customerId": "funtovia",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Sydney",
+      "industry": "Family entertainment",
+      "address": "Unit 23, 7 Salisbury Road, Castle Hill NSW 2154",
+      "lat": -33.7301813,
+      "lon": 150.9763735,
+      "locationPrecision": "Office",
+      "locationNote": "Australian office · Brand design imagery",
+      "description": "Australian office · Brand design imagery",
+      "photos": [
+        "assets/customers/yifun-all-2.jpg",
+        "assets/customers/yifun-all-3.jpg"
+      ],
+      "cover": "assets/customers/yifun-all-2.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/8864/f01610adff73df60e41230e84822bf3f2025_06_18_13_59_25_886_05144022127__1648_1248__.jpeg",
+          "source": "https://www.yifunlife.com.au/zh-CN/",
+          "label": "Official website image"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/8864/7bb6c83c6bc3e907e0a20d6c6c8de4852025_06_18_13_59_23_794_07227414064__1649_1248__.jpeg",
+          "source": "https://www.yifunlife.com.au/zh-CN/",
+          "label": "Official website image"
+        }
+      ],
+      "sourceUrl": "https://www.yifunlife.com.au/zh-CN/",
+      "coordinateSource": "https://maps.app.goo.gl/D1vkPZ9Gf5thdZ7Q6",
+      "year": null,
+      "area": null,
+      "type": "playground"
+    },
+    {
+      "id": "vend",
+      "title": "VEND Cafe · Virginia",
+      "customerId": "vend",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Brisbane",
+      "industry": "Cafe & marketplace",
+      "address": "1768 Sandgate Road, Virginia QLD 4014",
+      "lat": -27.3782723,
+      "lon": 153.0620964,
+      "locationPrecision": "Venue",
+      "locationNote": "",
+      "description": "Cafe & marketplace",
+      "photos": [
+        "assets/customers/vend-extra-0.jpg"
+      ],
+      "cover": "assets/customers/vend-extra-0.jpg",
+      "photoCredits": [
+        {
+          "url": "https://virginia.vendmarketplace.com.au/wp-content/uploads/2021/10/tha-cafe-2.jpg",
+          "source": "https://virginia.vendmarketplace.com.au/",
+          "label": "Virginia cafe"
+        }
+      ],
+      "sourceUrl": "https://virginia.vendmarketplace.com.au/",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=1768+Sandgate+Road+Virginia+Queensland+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "restaurant"
+    },
+    {
+      "id": "vend-annerley",
+      "title": "VEND Cafe · Annerley",
+      "customerId": "vend",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Brisbane",
+      "industry": "Cafe & marketplace",
+      "address": "289 Ipswich Road, Annerley QLD 4103",
+      "lat": -27.5021257,
+      "lon": 153.0341964,
+      "locationPrecision": "Venue",
+      "locationNote": "",
+      "description": "Cafe & marketplace",
+      "photos": [
+        "assets/customers/vend-annerley.jpg"
+      ],
+      "cover": "assets/customers/vend-annerley.jpg",
+      "photoCredits": [
+        {
+          "url": "https://annerley.vendmarketplace.com.au/wp-content/uploads/2024/10/home-pic.png",
+          "source": "https://annerley.vendmarketplace.com.au/",
+          "label": "Annerley cafe · Official website"
+        }
+      ],
+      "sourceUrl": "https://annerley.vendmarketplace.com.au/",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=289+Ipswich+Road+Annerley+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "restaurant"
+    },
+    {
+      "id": "action",
+      "title": "八度空间 · Action Karaoke",
+      "customerId": "action",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Karaoke",
+      "address": "1st Floor, 242 Little Bourke Street, Melbourne VIC 3000",
+      "lat": -37.8122843,
+      "lon": 144.9656692,
+      "locationPrecision": "Venue",
+      "locationNote": "",
+      "description": "Karaoke",
+      "photos": [
+        "assets/customers/action-venue.jpg"
+      ],
+      "cover": "assets/customers/action-venue.jpg",
+      "photoCredits": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlJYNiROqFvwtQV7EQz9aKyCTV6SJoDv2eb1m7OCijxtOa8wZy_gt0iC0AAoYCtyFkCibewDHOYMzztVCUw2KhXhFjgnqXqvbbrARci0MVLr2NPlvPCWLvKj3sPdTAVlgBW3-rw=w408-h306-k-no",
+          "source": "https://www.google.com/maps/place/Action+Karaoke/data=!4m6!3m5!1s0x6ad642ca3e64c18f:0x33d35cd23e4a3ca7!8m2!3d-37.8122843!4d144.9656692",
+          "label": "Public venue photo · Google Maps"
+        }
+      ],
+      "sourceUrl": "https://actionktv.com.au/",
+      "coordinateSource": "https://www.google.com/maps/place/Action+Karaoke/data=!4m6!3m5!1s0x6ad642ca3e64c18f:0x33d35cd23e4a3ca7!8m2!3d-37.8122843!4d144.9656692",
+      "year": null,
+      "area": null,
+      "type": "other"
+    },
+    {
+      "id": "shanghai-tada",
+      "title": "上海 Tada · 亦玩游乐总部",
+      "customerId": "shanghai-tada",
+      "status": "active",
+      "country": "China",
+      "continent": "Asia",
+      "city": "Shanghai",
+      "industry": "Family entertainment",
+      "address": "上海市奉贤区沪杭公路458号",
+      "lat": 30.9848132,
+      "lon": 121.4301683,
+      "locationPrecision": "Headquarters",
+      "locationNote": "按指定的亦玩游乐总部地址展示。",
+      "description": "按指定的亦玩游乐总部地址展示；图片为办公展示区（2024 年公开报道）。",
+      "photos": [
+        "assets/customers/yifun-hq.jpg",
+        "assets/customers/yifun-hq-2.jpg"
+      ],
+      "cover": "assets/customers/yifun-hq.jpg",
+      "photoCredits": [
+        {
+          "url": "https://www.fengxian.gov.cn/gzms/20240611/71565/efe2215abb3a49e8b91fe5fc55715b15.png",
+          "source": "https://www.fengxian.gov.cn/gzms/20240611/71565.html",
+          "label": "亦玩游乐办公展示区 · 上海奉贤区政府 · 2024"
+        },
+        {
+          "url": "https://www.fengxian.gov.cn/gzms/20240611/71565/8e2e483ed5df496188490064c1c56203.png",
+          "source": "https://www.fengxian.gov.cn/gzms/20240611/71565.html",
+          "label": "亦玩游乐办公展示区 · 上海奉贤区政府 · 2024"
+        }
+      ],
+      "sourceUrl": "https://www.yifunlife.com.au/zh-CN/",
+      "coordinateSource": "https://www.google.com/maps/place/沪杭公路458号/data=!4m7!3m6!1s0x35b288afcde776e3:0x89ff3c3f47ec9da1!8m2!3d30.98282!4d121.43477",
+      "year": null,
+      "area": null,
+      "coordinateNote": "Google China GCJ-02 address coordinate converted to WGS84.",
+      "type": "playground"
+    },
+    {
+      "id": "minoland",
+      "title": "Minoland Playground",
+      "customerId": "minoland",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Indoor playground",
+      "address": "4 Croft Street, Oakleigh VIC 3166",
+      "lat": -37.9079942,
+      "lon": 145.102384,
+      "locationPrecision": "Address",
+      "locationNote": "",
+      "description": "Indoor playground",
+      "photos": [
+        "assets/customers/minoland-2.jpg",
+        "assets/customers/minoland-3.jpg"
+      ],
+      "cover": "assets/customers/minoland-2.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/9211/b3357cf2f1a05ab2b37f790fe2e8abed2026_06_12_10_10_46_484_00211689147__2000_1000__.jpeg",
+          "source": "https://minoland.com.au/",
+          "label": ""
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/9211/5324c10cf98cc59a5af611ad68c6af232026_06_12_10_10_37_996_08096946699__2000_1000__.jpeg",
+          "source": "https://minoland.com.au/",
+          "label": ""
+        }
+      ],
+      "sourceUrl": "https://minoland.com.au/",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=4+Croft+Street+Oakleigh+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "playground"
+    },
+    {
+      "id": "foodiguy",
+      "title": "Foodiguy",
+      "customerId": "foodiguy-zhucheng",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Restaurant",
+      "address": "111 Waverley Road, Malvern East VIC 3145",
+      "lat": -37.8758047,
+      "lon": 145.0484116,
+      "locationPrecision": "Venue",
+      "locationNote": "Public menu imagery",
+      "description": "Public menu imagery",
+      "photos": [
+        "assets/customers/foodiguy-2.jpg",
+        "assets/customers/foodiguy-3.jpg"
+      ],
+      "cover": "assets/customers/foodiguy-2.jpg",
+      "photoCredits": [
+        {
+          "url": "https://azrea-backend-feature-aws-dep-staging.up.railway.app/api/v1/suburbs/lifestyle/place-photo/77e0b0ca-f83d-4e44-81e9-d284036788e3/0",
+          "source": "https://azrea.com.au/malvern-east/lifestyle/restaurant/foodiguy",
+          "label": ""
+        },
+        {
+          "url": "https://azrea-backend-feature-aws-dep-staging.up.railway.app/api/v1/suburbs/lifestyle/place-photo/0d61abe0-38a1-4f4e-bedf-ce1f259debac/0",
+          "source": "https://azrea.com.au/malvern-east/lifestyle/restaurant/foodiguy",
+          "label": ""
+        }
+      ],
+      "sourceUrl": "https://azrea.com.au/malvern-east/lifestyle/restaurant/foodiguy",
+      "coordinateSource": "https://azrea.com.au/malvern-east/lifestyle/restaurant/foodiguy",
+      "year": null,
+      "area": null,
+      "type": "restaurant"
+    },
+    {
+      "id": "zhucheng",
+      "title": "筑城烙印",
+      "customerId": "foodiguy-zhucheng",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Restaurant",
+      "address": "109 Waverley Road, Malvern East VIC 3145",
+      "lat": -37.8758333,
+      "lon": 145.0483198,
+      "locationPrecision": "Venue",
+      "locationNote": "",
+      "description": "Restaurant",
+      "photos": [
+        "assets/customers/zhucheng.jpg"
+      ],
+      "cover": "assets/customers/zhucheng.jpg",
+      "photoCredits": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkvkRvcnBoW9MkF3Fsx7mu7I7Xb0rPCOzYK-CLi2hxOb2tWPRZ-2vkYWc4G5BUJr07yhgEQatqDhfsFsiaYkMTyU10eu7kmBYd07ZZYyYvVvfvW9enge_q47MNkoloVjQa5cpn6jnJ5LnKk=w408-h306-k-no",
+          "source": "https://www.google.com/maps/place/筑城烙印/data=!4m6!3m5!1s0x6ad669fbbcffe4fd:0xcdbaf368ec7a0074!8m2!3d-37.8758333!4d145.0483198",
+          "label": "Public business photo · Google Maps"
+        }
+      ],
+      "sourceUrl": "https://curateria.com.au/melbourne/restaurants/-15",
+      "coordinateSource": "https://curateria.com.au/melbourne/restaurants/-15",
+      "year": null,
+      "area": null,
+      "type": "restaurant"
+    },
+    {
+      "id": "cuto",
+      "title": "Cuto Kids Cafe · Bankstown",
+      "customerId": "cuto",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Sydney",
+      "industry": "Kids cafe",
+      "address": "Shop MM006, Bankstown Central, North Terrace, Bankstown NSW 2200",
+      "lat": -33.915836,
+      "lon": 151.0390824,
+      "locationPrecision": "Shopping centre",
+      "locationNote": "Brand location shown: Bankstown",
+      "description": "Brand location shown: Bankstown",
+      "photos": [
+        "assets/customers/cuto-1.jpg"
+      ],
+      "cover": "assets/customers/cuto-1.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/6564/a171395694957c5f5da3851c520f9c772025_12_30_12_30_40_282_03650619967__6180_3476__.jpeg?x-oss-process=image/format,jpg/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://www.cuto.com.au/en/pages/locations",
+          "label": "lm_image___2zfov  cover___2hGtr"
+        }
+      ],
+      "sourceUrl": "https://www.cuto.com.au/en/pages/locations",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=Bankstown+Central+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "kidscafe"
+    },
+    {
+      "id": "amigos",
+      "title": "Little Amigos · Carlingford",
+      "customerId": "amigos",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Sydney",
+      "industry": "Kids cafe",
+      "address": "Carlingford Court, Pennant Hills Road, Carlingford NSW 2118",
+      "lat": -33.7761247,
+      "lon": 151.0524448,
+      "locationPrecision": "Shopping centre",
+      "locationNote": "Brand location shown: Carlingford",
+      "description": "Brand location shown: Carlingford",
+      "photos": [
+        "assets/customers/amigos-4.jpg",
+        "assets/customers/amigos-5.jpg"
+      ],
+      "cover": "assets/customers/amigos-4.jpg",
+      "photoCredits": [
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/63467bc032ed6e30644a43c7/d0d26fb8-c483-4d04-a5bb-c059602e2043/Little+AMIGOS+PR+Shoot_3MB-72DPI+%2810+of+177%29.jpg",
+          "source": "https://www.littleamigos.com/locations",
+          "label": "Little AMIGOS PR Shoot_3MB-72DPI (10 of 177).jpg"
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/63467bc032ed6e30644a43c7/709a3b0e-32d9-495b-ac65-dd57603c23b9/Little+AMIGOS+PR+Shoot_3MB-72DPI+%284+of+177%29.jpg",
+          "source": "https://www.littleamigos.com/locations",
+          "label": "Little AMIGOS PR Shoot_3MB-72DPI (4 of 177).jpg"
+        }
+      ],
+      "sourceUrl": "https://www.littleamigos.com/locations",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=Carlingford+Court+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "kidscafe"
+    },
+    {
+      "id": "vitaland",
+      "title": "Vitaland Kids Cafe · Alexandria",
+      "customerId": "vitaland",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Sydney",
+      "industry": "Kids cafe",
+      "address": "Shop 11, Level 1, 49–59 O’Riordan Street, Alexandria NSW 2015",
+      "lat": -33.9139589,
+      "lon": 151.1948481,
+      "locationPrecision": "Venue",
+      "locationNote": "Brand location shown: Alexandria",
+      "description": "Brand location shown: Alexandria",
+      "photos": [
+        "assets/customers/vitaland-extra-0.jpg",
+        "assets/customers/vitaland-extra-1.jpg"
+      ],
+      "cover": "assets/customers/vitaland-extra-0.jpg",
+      "photoCredits": [
+        {
+          "url": "https://vitalandkidscafe.com/wp-content/uploads/2024/09/2023-07-16-1-600x400.jpg",
+          "source": "https://vitalandkidscafe.com/alexandria-store/",
+          "label": "Alexandria play area"
+        },
+        {
+          "url": "https://vitalandkidscafe.com/wp-content/uploads/2024/09/2023-07-16-2-600x400.jpg",
+          "source": "https://vitalandkidscafe.com/alexandria-store/",
+          "label": "Alexandria play area"
+        }
+      ],
+      "sourceUrl": "https://vitalandkidscafe.com/alexandria-store/",
+      "coordinateSource": "https://maps.app.goo.gl/Fq5mubNSWXt3fXBVA",
+      "year": null,
+      "area": null,
+      "type": "kidscafe"
+    },
+    {
+      "id": "pixieland",
+      "title": "Pixieland · M-City",
+      "customerId": "pixieland",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Kids cafe",
+      "address": "L1 T42, M-City, 2107–2125 Dandenong Road, Clayton VIC 3168",
+      "lat": -37.9209974,
+      "lon": 145.1399161,
+      "locationPrecision": "Shopping centre",
+      "locationNote": "",
+      "description": "Kids cafe",
+      "photos": [
+        "assets/customers/pixieland-home-17.jpg",
+        "assets/customers/pixieland-home-18.jpg"
+      ],
+      "cover": "assets/customers/pixieland-home-17.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/8727/6e3650c19e4cb9a70e6036a6d3c7c4e52025_07_03_12_26_29_137_05334157135__630_420__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://www.pixieland.com.au/",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/8727/7b279348416e588d3a2a9438713a6ff12025_07_03_12_26_27_116_03694198543__630_420__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://www.pixieland.com.au/",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        }
+      ],
+      "sourceUrl": "https://www.pixieland.com.au/",
+      "coordinateSource": "https://www.pixieland.com.au/",
+      "year": null,
+      "area": null,
+      "type": "kidscafe"
+    },
+    {
+      "id": "roller",
+      "title": "Roller One",
+      "customerId": "roller",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Roller skating",
+      "address": "Shop F6, 172–210 Burwood Highway, Burwood East VIC 3151",
+      "lat": -37.8530342,
+      "lon": 145.1493983,
+      "locationPrecision": "Venue",
+      "locationNote": "",
+      "description": "Roller skating",
+      "photos": [
+        "assets/customers/roller-home-20.jpg",
+        "assets/customers/roller-home-21.jpg"
+      ],
+      "cover": "assets/customers/roller-home-20.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/8030/63ea8133d21184834baab544a17899cf2025_06_03_18_40_21_282_02612047707__3024_3317__.jpeg?x-oss-process=image/format,jpg/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://rolleronemelbourne.com.au/",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/8030/612e86a26c0fe6ee8775719dbca81cba2025_06_03_18_40_46_315_02650133301__5712_4284__.jpeg?x-oss-process=image/format,jpg/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://rolleronemelbourne.com.au/",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        }
+      ],
+      "sourceUrl": "https://rolleronemelbourne.com.au/",
+      "coordinateSource": "https://rolleronemelbourne.com.au/",
+      "year": null,
+      "area": null,
+      "type": "sports"
+    },
+    {
+      "id": "bella",
+      "title": "Bella’s Wonderland",
+      "customerId": "bella",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Gold Coast",
+      "industry": "Indoor playground",
+      "address": "Shop 48, 3–15 Jackman Street, Southport QLD 4215",
+      "lat": -27.9675573,
+      "lon": 153.4032495,
+      "locationPrecision": "Venue",
+      "locationNote": "",
+      "description": "Indoor playground",
+      "photos": [
+        "assets/customers/bella-all-6.jpg"
+      ],
+      "cover": "assets/customers/bella-all-6.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/8194/9f9caadd1959bb9405ecafb0efded4f02024_12_05_15_28_59_959_01008693136__4573_2600__.jpeg",
+          "source": "https://bellaswonderland.com.au/",
+          "label": "Official website image"
+        }
+      ],
+      "sourceUrl": "https://bellaswonderland.com.au/",
+      "coordinateSource": "https://bellaswonderland.com.au/",
+      "year": null,
+      "area": null,
+      "type": "playground"
+    },
+    {
+      "id": "bbpet",
+      "title": "BBpet / Petbyte",
+      "customerId": "bbpet",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Pet services",
+      "address": "3210 South Gippsland Highway, Tooradin VIC 3980",
+      "lat": -38.2150112,
+      "lon": 145.4176371,
+      "locationPrecision": "Public contact address",
+      "locationNote": "Website contact address · Official brand image",
+      "description": "Website contact address · Official brand image",
+      "photos": [
+        "assets/customers/bbpet-0.jpg"
+      ],
+      "cover": "assets/customers/bbpet-0.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/8532/4970e15a9ded4c9eba30f4ca9ef803e22025_02_18_15_17_38_206_02749799286__591_197__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1080/quality,Q_90/sharpen,90",
+          "source": "https://bbpet.com/en/",
+          "label": "BBPet"
+        }
+      ],
+      "sourceUrl": "https://bbpet.com/en/",
+      "coordinateSource": "https://bbpet.com/en/",
+      "year": null,
+      "area": null,
+      "type": "other"
+    },
+    {
+      "id": "tada",
+      "title": "Tada Kids Cafe · Oran Park",
+      "customerId": "tada",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Sydney",
+      "industry": "Kids cafe",
+      "address": "Shop 2C, Oran Park Podium, 351 Oran Park Drive, Oran Park NSW 2570",
+      "lat": -34.0003525,
+      "lon": 150.741328,
+      "locationPrecision": "Shopping centre",
+      "locationNote": "Brand location shown: Oran Park",
+      "description": "Brand location shown: Oran Park",
+      "photos": [
+        "assets/customers/tada-8.jpg",
+        "assets/customers/tada-9.jpg"
+      ],
+      "cover": "assets/customers/tada-8.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/6476/a15ccae5212a274c2c10c171c84b45322025_05_26_00_35_57_371_04243386695__1200_648__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://tadakidscafe.com/pages/oran-park-story",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/6476/27c7a339109353bbff20f978a2b8f0aa2025_05_26_00_35_40_914_04572191466__1200_648__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://tadakidscafe.com/pages/oran-park-story",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        }
+      ],
+      "sourceUrl": "https://tadakidscafe.com/pages/oran-park-story",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=Oran+Park+Podium+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "kidscafe"
+    },
+    {
+      "id": "oto",
+      "title": "OTO Play Park · Chalong",
+      "customerId": "oto",
+      "status": "active",
+      "country": "Thailand",
+      "continent": "Asia",
+      "city": "Phuket",
+      "industry": "Kids cafe",
+      "address": "3rd Floor, Robinson Lifestyle Chalong, Phuket 83130",
+      "lat": 7.847293,
+      "lon": 98.3504191,
+      "locationPrecision": "Venue",
+      "locationNote": "Brand location shown: Chalong",
+      "description": "Brand location shown: Chalong",
+      "photos": [
+        "assets/customers/oto-extra-0.jpg"
+      ],
+      "cover": "assets/customers/oto-extra-0.jpg",
+      "photoCredits": [
+        {
+          "url": "https://phuket.otoplay.co/photos/ballpit-portal.jpg",
+          "source": "https://phuket.otoplay.co/",
+          "label": "OTO play area"
+        }
+      ],
+      "sourceUrl": "https://phuket.otoplay.co/",
+      "coordinateSource": "https://phuket.otoplay.co/",
+      "year": null,
+      "area": null,
+      "type": "kidscafe"
+    },
+    {
+      "id": "gumnuts",
+      "title": "Gumnuts Playland",
+      "customerId": "gumnuts",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Indoor playground",
+      "address": "Shop 3204, Westfield Knox, 425 Burwood Highway, Wantirna South VIC 3152",
+      "lat": -37.8686987,
+      "lon": 145.2437027,
+      "locationPrecision": "Shopping centre",
+      "locationNote": "",
+      "description": "Indoor playground",
+      "photos": [
+        "assets/customers/gumnuts-home-all-1.jpg",
+        "assets/customers/gumnuts-home-all-3.jpg"
+      ],
+      "cover": "assets/customers/gumnuts-home-all-1.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/8848/6a7587fabb92ff18aa5ebb00c84332d82025_10_28_12_31_35_587_06731179282__2160_1080__.jpeg",
+          "source": "https://www.gumnutsplayland.com.au/en/",
+          "label": "Official website image"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/8848/a199ca640b377ceaaa37c6576b5a23242025_10_27_15_24_07_449_03046872860__800_1000__.png",
+          "source": "https://www.gumnutsplayland.com.au/en/",
+          "label": "Official website image"
+        }
+      ],
+      "sourceUrl": "https://www.gumnutsplayland.com.au/en/pages/contact",
+      "coordinateSource": "https://www.gumnutsplayland.com.au/en/pages/contact",
+      "year": null,
+      "area": null,
+      "type": "playground"
+    },
+    {
+      "id": "rainbow",
+      "title": "Rainbow Town",
+      "customerId": "rainbow",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Indoor playground",
+      "address": "49–55 Myrtle Street, Glen Waverley VIC 3150",
+      "lat": -37.8867697,
+      "lon": 145.1593721,
+      "locationPrecision": "Venue",
+      "locationNote": "",
+      "description": "Indoor playground",
+      "photos": [
+        "assets/customers/rainbow-all-9.jpg",
+        "assets/customers/rainbow-all-10.jpg",
+        "assets/customers/rainbow-all-14.jpg"
+      ],
+      "cover": "assets/customers/rainbow-all-9.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/2155/8b54b03e9b24c3942b31d6f72c333c822023_06_28_09_03_44_889_05505465784__1128_1314__.png",
+          "source": "https://www.rainbowtownonline.com.au/en/",
+          "label": "Official website image"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/2155/02fd4a50dadf39260d195b955a8ba9f12023_06_28_09_04_07_459_05108650547__1128_1314__.png",
+          "source": "https://www.rainbowtownonline.com.au/en/",
+          "label": "Official website image"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/2155/00ec8fce3e95bd1e1b7e05d8cd345c2a2023_06_28_09_04_45_150_08397490917__1128_1314__.png",
+          "source": "https://www.rainbowtownonline.com.au/en/",
+          "label": "Official website image"
+        }
+      ],
+      "sourceUrl": "https://www.rainbowtownonline.com.au/en/",
+      "coordinateSource": "https://www.rainbowtownonline.com.au/en/",
+      "year": null,
+      "area": null,
+      "type": "playground"
+    },
+    {
+      "id": "anchorage",
+      "title": "Anchorage Boarding Kennels & Cattery",
+      "customerId": "anchorage",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Pet boarding",
+      "address": "3210 South Gippsland Highway, Tooradin VIC 3980",
+      "lat": -38.2150112,
+      "lon": 145.4176371,
+      "locationPrecision": "Venue",
+      "locationNote": "",
+      "description": "Pet boarding",
+      "photos": [
+        "assets/customers/anchorage-home-2.jpg",
+        "assets/customers/anchorage-home-3.jpg"
+      ],
+      "cover": "assets/customers/anchorage-home-2.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/4317/063837f7e0f1a02d7126d4fcb2a5834c2023_06_29_10_26_44_487_08681954261__5064_1380__.jpeg?x-oss-process=image/format,jpg/interlace,1,image/resize,w_1400/quality,Q_90/sharpen,90",
+          "source": "https://ancboarding.com/",
+          "label": ""
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/4317/4b22cce3da8472b93d3766598530cded2023_06_29_10_26_35_476_04970179808__5064_1380__.jpeg?x-oss-process=image/format,jpg/interlace,1,image/resize,w_1400/quality,Q_90/sharpen,90",
+          "source": "https://ancboarding.com/",
+          "label": ""
+        }
+      ],
+      "sourceUrl": "https://ancboarding.com/",
+      "coordinateSource": "https://ancboarding.com/",
+      "year": null,
+      "area": null,
+      "type": "other"
+    },
+    {
+      "id": "menya",
+      "title": "面屋 · Menya Ramen",
+      "customerId": "menya",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Japanese restaurant",
+      "address": "Galleria, 385 Bourke Street, Melbourne VIC 3000",
+      "lat": -37.8147788,
+      "lon": 144.9628583,
+      "locationPrecision": "Shopping centre",
+      "locationNote": "Brand location shown: Galleria · Official menu imagery",
+      "description": "Brand location shown: Galleria · Official menu imagery",
+      "photos": [
+        "assets/customers/menya-home-2.jpg"
+      ],
+      "cover": "assets/customers/menya-home-2.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/2409/3d78ad358bd545acb3ff1686d1dd617b2022_12_26_10_55_19_799_07573237327__800_520__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1000/quality,Q_90/sharpen,90",
+          "source": "https://o-bento.com.au/en/",
+          "label": "lm_image___2zfov  cover___2hGtr"
+        }
+      ],
+      "sourceUrl": "https://whatson.melbourne.vic.gov.au/eat-and-drink/menya-ramen-bourke-st-melbourne",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=385+Bourke+Street+Melbourne+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "restaurant"
+    },
+    {
+      "id": "potato",
+      "title": "土豆商城 · Potato Mart",
+      "customerId": "potato",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Grocery",
+      "address": "A7, 2A Westall Road, Springvale VIC 3171",
+      "lat": -37.9300588,
+      "lon": 145.14305,
+      "locationPrecision": "Venue",
+      "locationNote": "Official product imagery",
+      "description": "Official product imagery",
+      "photos": [
+        "assets/customers/potato-10.jpg",
+        "assets/customers/potato-11.jpg"
+      ],
+      "cover": "assets/customers/potato-10.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/1027/9191f5a931e38f619ddda11c323a108c2026_08_19_01_55_10_798_05296690913__2118_742__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://mrpotato.mypisell.com/zh-CN/?scene=1004",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/1027/963b9ed8d7e57dd765b1bd3e214707b12026_08_19_01_52_08_881_06075378525__2117_743__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://mrpotato.mypisell.com/zh-CN/?scene=1004",
+          "label": "lm_image___2zfov swiper-item-img___1bCLM cover___2hGtr"
+        }
+      ],
+      "sourceUrl": "https://mrpotato.mypisell.com/zh-CN/?scene=1004",
+      "coordinateSource": "https://maps.app.goo.gl/sAMNejJPEBospCfk8",
+      "year": null,
+      "area": null,
+      "type": "other"
+    },
+    {
+      "id": "triton",
+      "title": "Triton Food Brokers",
+      "customerId": "triton",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Brisbane",
+      "industry": "Grocery & deli",
+      "address": "138–140 Montague Road, South Brisbane QLD 4101",
+      "lat": -27.4741664,
+      "lon": 153.0116124,
+      "locationPrecision": "Venue",
+      "locationNote": "",
+      "description": "Grocery & deli",
+      "photos": [
+        "assets/customers/triton-venue.jpg"
+      ],
+      "cover": "assets/customers/triton-venue.jpg",
+      "photoCredits": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnz3BBTUtqV-aKnPUkR65ep5lq7vwnwIc8e6YJ_QL0ucNL2EsNk6WSH-xO1vtYmzLf1pDtaJlPAa8ozf91pw3OLBtZnlksf2hhyAG2uzH-Aoz8oIdOdGRjY-hf6pBtqTX6bZMW7=w408-h544-k-no",
+          "source": "https://www.google.com/maps/place/Triton+Food+Brokers/data=!4m6!3m5!1s0x6b915a6da75d84e3:0xa71da10ab02bc90b!8m2!3d-27.4741743!4d153.0116033",
+          "label": "Public business photo · Google Maps"
+        }
+      ],
+      "sourceUrl": "https://www.tritonfoods.com.au/en/",
+      "coordinateSource": "https://maps.apple.com/place?place-id=I279A96128C974A88",
+      "year": null,
+      "area": null,
+      "type": "other"
+    },
+    {
+      "id": "doublew",
+      "title": "Double W Wholesale",
+      "customerId": "doublew",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Food wholesale",
+      "address": "2/62 Merola Way, Campbellfield VIC 3061",
+      "lat": -37.6537954,
+      "lon": 144.9595012,
+      "locationPrecision": "Address",
+      "locationNote": "Official product imagery",
+      "description": "Official product imagery",
+      "photos": [
+        "assets/customers/doublew-1.jpg"
+      ],
+      "cover": "assets/customers/doublew-1.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/2144/b7718f75162e273a826067992cd68a862022_10_17_16_05_56_504_09647536562__3840_1060__.png?x-oss-process=image/format,png/interlace,1,image/resize,w_1920/quality,Q_90/sharpen,90",
+          "source": "https://www.doublew.com.au/pages/?id=1527",
+          "label": ""
+        }
+      ],
+      "sourceUrl": "https://www.doublew.com.au/pages/?id=1527",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=62+Merola+Way+Campbellfield+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "other"
+    },
+    {
+      "id": "joysway",
+      "title": "Joysway Australia",
+      "customerId": "joysway",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Sydney",
+      "industry": "RC hobby products",
+      "address": "Unit 4, 21 Cavasinni Place, Wetherill Park NSW 2164",
+      "lat": -33.845758,
+      "lon": 150.8806008,
+      "locationPrecision": "Address",
+      "locationNote": "Official product imagery",
+      "description": "Official product imagery",
+      "photos": [
+        "assets/customers/joysway-all-1.jpg",
+        "assets/customers/joysway-all-2.jpg"
+      ],
+      "cover": "assets/customers/joysway-all-1.jpg",
+      "photoCredits": [
+        {
+          "url": "https://file.mypisell.com/pisel/image/7435/bd3b5ccf5c569c7630646bac4242a85a2024_07_22_13_01_15_310_02547412534__3841_2560__.jpeg",
+          "source": "https://joysway.au/en/pages/about-us",
+          "label": "Official website image"
+        },
+        {
+          "url": "https://file.mypisell.com/pisel/image/7435/f4446ea78e4c32491743aa3e77ada77a2024_06_24_16_46_22_109_03042234872__967_544__.jpeg",
+          "source": "https://joysway.au/en/pages/about-us",
+          "label": "Official website image"
+        }
+      ],
+      "sourceUrl": "https://joysway.au/en/pages/about-us",
+      "coordinateSource": "https://www.google.com/maps/place/21+Cavasinni+Pl,+Wetherill+Park+NSW+2164/data=!4m6!3m5!1s0x6b1296df7cb33cb5:0xff997bb0cebc2d44!8m2!3d-33.845758!4d150.8806008",
+      "year": null,
+      "area": null,
+      "type": "other"
+    },
+    {
+      "id": "bulk",
+      "title": "Bulk Bargains",
+      "customerId": "bulk",
+      "status": "active",
+      "country": "Australia",
+      "continent": "Oceania",
+      "city": "Melbourne",
+      "industry": "Retail & wholesale",
+      "address": "Shop SP030, Box Hill Central North, Box Hill VIC 3128",
+      "lat": -37.8195599,
+      "lon": 145.1211628,
+      "locationPrecision": "Shopping centre",
+      "locationNote": "Official product imagery",
+      "description": "Official product imagery",
+      "photos": [
+        "assets/customers/bulk-3.jpg"
+      ],
+      "cover": "assets/customers/bulk-3.jpg",
+      "photoCredits": [
+        {
+          "url": "https://static.wixstatic.com/media/e5a85b_e98e207561e043b6859a87c1d5d717d3~mv2.webp/v1/fill/w_321,h_321,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/web%20pic.webp",
+          "source": "https://bulkbargains88.wixsite.com/bulk-bargains",
+          "label": "web pic.webp"
+        }
+      ],
+      "sourceUrl": "https://bulkbargains88.wixsite.com/bulk-bargains",
+      "coordinateSource": "https://nominatim.openstreetmap.org/search?q=Box+Hill+Central+Australia&format=json&limit=2&addressdetails=1",
+      "year": null,
+      "area": null,
+      "type": "other"
+    }
+  ]
+}

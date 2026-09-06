@@ -1,0 +1,5 @@
+# Local testing only. Never copy LOCAL_DEV into production vars.
+LOCAL_DEV=true
+# Google Maps browser key: restrict to your allowed HTTP referrers.
+GOOGLE_MAPS_API_KEY=
+GOOGLE_MAPS_MAP_ID=
