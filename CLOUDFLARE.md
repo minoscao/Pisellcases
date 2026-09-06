@@ -56,26 +56,13 @@ npx wrangler d1 migrations apply pisell-cases --remote
 
 图片通过 Worker 校验后写入 R2，不需要向浏览器提供 R2 访问密钥。图片采用随机名称，通过 `/media/photos/...` 读取。单张限制 10 MB，单个项目最多 24 张，支持 JPG、PNG、WebP。
 
-## 5. 管理登录
+## 5. 管理密码
 
-在 Cloudflare Zero Trust 中创建一个自托管 Access 应用，仅允许负责维护的人员登录。将同一应用覆盖到站点的下列路径：
+管理页没有公开入口。维护时直接打开 `https://你的域名/admin.html`，输入密码 `Pisellpisell1` 即可。
 
-- `/admin`、`/admin.html` 和 `/admin/*`
-- `/api/photos`
-- `/api/cases/*`
+密码不会写进浏览器端页面代码。登录成功后会写入一个仅本站可用、30 天有效的安全 Cookie；图片上传和项目保存接口同样会验证该 Cookie。访客仍可读取地图、图片和案例资料，因此嵌入网站不会被要求登录。
 
-保持 `GET /api/cases`、`/api/config`、`/media/*`、`/atlas.html` 和展示资源可由访客读取，避免访客浏览 iframe 时被要求登录。地图读取接口和写入接口路径不同。
-
-在 Cloudflare Worker 的「设置 → 变量和机密」中填写 `ACCESS_TEAM_DOMAIN`（如 `your-team.cloudflareaccess.com`）和 `ACCESS_AUD`（此应用的 AUD）。Worker 会验证登录凭证签名、签发方、受众和有效期；不是仅检查某个请求头是否存在。未配置管理登录时写入默认关闭，访客仍可浏览已有案例。`keep_vars: true` 会保留在控制台配置的变量，后续从 GitHub 部署不会将它们清空。
-
-本地验证可以复制 `.dev.vars.example` 为 `.dev.vars`，然后执行：
-
-```sh
-npx wrangler d1 migrations apply pisell-cases --local
-npm run dev:cloudflare
-```
-
-`LOCAL_DEV=true` 仅用于本机回环地址，不能填入生产环境配置。`.dev.vars` 已排除在 Git 之外。
+这是按当前需求提供的页面级密码保护。以后若需要多人权限、随时撤销账号或更高强度的保护，可再改回 Cloudflare Access。
 
 ## 6. Google Maps
 
@@ -95,7 +82,7 @@ npm run dev:cloudflare
 npm run deploy:cloudflare
 ```
 
-也可以在 Cloudflare Workers Builds 连接此 GitHub 仓库，使用 `npm run build:web` 作为构建命令、`npx wrangler deploy` 作为部署命令。首次部署前仍需完成存储与登录配置。此仓库尚未绑定你的 Cloudflare 账号或域名。
+也可以在 Cloudflare Workers Builds 连接此 GitHub 仓库，使用 `npm run build:web` 作为构建命令、`npx wrangler deploy` 作为部署命令。首次部署前仍需完成存储配置。此仓库尚未绑定你的 Cloudflare 账号或域名。
 
 独立管理入口：`https://你的域名/admin.html`
 

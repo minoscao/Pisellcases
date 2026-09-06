@@ -1,5 +1,5 @@
 import {caseTypes,continentOptions,photoLimits,typeLabel,newCase,caseErrors,parseGoogleMapsLink} from './case-model.mjs';
-import {runtimeConfig,loadLibrary,saveCase,uploadPhoto} from './library.mjs';
+import {runtimeConfig,adminSession,adminLogin,loadLibrary,saveCase,uploadPhoto} from './library.mjs';
 import {escapeHtml as esc,entityCard} from '../experience/ui.js';
 import countryContinents from './country-continents.json';
 const $=s=>document.querySelector(s),params=new URL(location.href).searchParams;
@@ -44,6 +44,10 @@ function renderPhotos(){const grid=$('#photo-grid');grid.replaceChildren();$('#p
 }
 function viewPhoto(src){const img=$('#viewer-image');img.style.animation='none';img.src=src;img.alt=item?.title||'项目图片';$('#photo-viewer').showModal();requestAnimationFrame(()=>{img.style.animation='';});}
 $('#close-photo').onclick=()=>$('#photo-viewer').close();
+$('#toggle-password').onclick=()=>{const input=$('#admin-password'),shown=input.type==='text';input.type=shown?'password':'text';$('#toggle-password').textContent=shown?'显示':'隐藏';$('#toggle-password').setAttribute('aria-label',shown?'显示密码':'隐藏密码');$('#toggle-password').setAttribute('aria-pressed',String(!shown));input.focus();};
+$('#login-form').onsubmit=async event=>{event.preventDefault();const input=$('#admin-password'),summary=$('#login-error'),button=$('#login-submit');summary.hidden=true;input.setAttribute('aria-invalid','false');if(!input.value){input.setAttribute('aria-invalid','true');summary.textContent='请输入管理密码';summary.hidden=false;summary.focus();return;}
+  button.disabled=true;button.textContent='正在验证…';try{await adminLogin(input.value);input.value='';$('#login-view').hidden=true;await openAdmin();}catch(error){input.setAttribute('aria-invalid','true');summary.textContent=error.message;summary.hidden=false;summary.focus();}finally{button.disabled=false;button.textContent='进入管理';}
+};
 function showErrors(errors,focus=false){for(const f of fields){const message=errors[f.name];$('#'+f.name).setAttribute('aria-invalid',String(!!message));$('#error-'+f.name).hidden=!message;$('#error-'+f.name).textContent=message||'';}
   $('#error-photos').hidden=!errors.photos;$('#error-photos').textContent=errors.photos||'';
   const summary=$('#form-errors');summary.hidden=!Object.keys(errors).length;summary.innerHTML='<strong>请完善以下信息</strong><ul>'+Object.entries(errors).map(([key,value])=>`<li><a href="#${key==='photos'?'photo-upload':key}">${esc(value)}</a></li>`).join('')+'</ul>';
@@ -95,7 +99,7 @@ $('#case-form').onsubmit=async event=>{event.preventDefault();if(busy||uploading
   finally{busy=false;$('#save-project').disabled=config.storage!=='cloudflare';$('#photo-upload').disabled=false;$('#camera-upload').disabled=false;$('#upload-progress').hidden=true;$('.form-sections').inert=false;$('#save-project').textContent='保存项目';}
 };
 window.addEventListener('beforeunload',event=>{if(dirty||uploading||busy){event.preventDefault();event.returnValue='';}});
-async function start(){
+async function openAdmin(){
   config=await runtimeConfig();items=(await loadLibrary({editable:true})).filter(i=>!i.archived);
   $('#page-message').textContent='';$('#type-filter').insertAdjacentHTML('beforeend',caseTypes.map(t=>`<option value="${t.value}">${t.label}</option>`).join(''));
   if(!params.has('new')&&!params.has('id')){$('#library-view').hidden=false;renderList();return;}
@@ -107,5 +111,10 @@ async function start(){
     if(['lat','lon'].includes(f.name)){item.googlePlaceId='';item.googleMapsUrl='';item.coordinateSource='';$('#google-link').value='';}
     markDirty();renderPreview();renderLocation();});input.addEventListener('blur',()=>{const error=caseErrors(item)[f.name];$('#error-'+f.name).textContent=error||'';$('#error-'+f.name).hidden=!error;input.setAttribute('aria-invalid',String(!!error));});}
   $('#save-project').textContent='保存项目';$('#save-project').disabled=config.storage!=='cloudflare';$('#storage-note').textContent=config.storage==='cloudflare'?'保存后，独立地图及网站中嵌入的地图会在刷新时显示更新。':'保存服务尚未连接。完成 Cloudflare 配置后即可保存项目与图片。';if(config.storage!=='cloudflare')$('#action-status').textContent='保存服务尚未连接';fillFields();initGoogle();
+}
+async function start(){
+  const session=await adminSession();$('#page-message').textContent='';
+  if(!session.authenticated){$('#login-view').hidden=false;$('#admin-password').focus();return;}
+  await openAdmin();
 }
 start().catch(error=>{$('#page-message').classList.add('error');$('#page-message').textContent=error.message;});

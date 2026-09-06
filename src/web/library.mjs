@@ -14,6 +14,8 @@ async function request(path,options={}){
   const data=await response.json().catch(()=>({error:'请先登录管理页面，再重试'}));
   if(!response.ok)throw new Error(data.error||'操作未完成，请重试');return data;
 }
+export async function adminSession(){return request('api/admin/session');}
+export async function adminLogin(password){return request('api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password})});}
 export async function loadLibrary(){return (await request((await runtimeConfig()).storage==='cloudflare'?'api/cases':'cases.json')).items;}
 export async function saveCase(item){
   if((await runtimeConfig()).storage!=='cloudflare')throw new Error('保存服务尚未连接，请完成 Cloudflare 配置后重试');

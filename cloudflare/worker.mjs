@@ -1,7 +1,8 @@
-import {createRemoteJWKSet,jwtVerify} from 'jose';
 import seed from '../src/web/data/customers.json' with {type:'json'};
 import {caseErrors,photoLimits,typeLabel} from '../src/web/case-model.mjs';
-const keySets=new Map(),seedItems=new Map(seed.items.map(item=>[item.id,item]));
+const seedItems=new Map(seed.items.map(item=>[item.id,item]));
+const adminPasswordHash='0c64cf95a627ee3d059e8a8f8400158b2c60275671fb6c5551a6799a398baf13';
+const sessionName='pisell_admin',sessionLifetime=60*60*24*30,encoder=new TextEncoder();
 let schemaReady;
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 const error=(message,status=400)=>Object.assign(new Error(message),{status});
@@ -9,14 +10,38 @@ function ensureSchema(env){
   schemaReady ||= env.DB.prepare('CREATE TABLE IF NOT EXISTS case_records (id TEXT PRIMARY KEY, data TEXT NOT NULL CHECK (json_valid(data)), revision INTEGER NOT NULL DEFAULT 1, updated_at TEXT NOT NULL)').run().catch(cause=>{schemaReady=undefined;throw cause;});
   return schemaReady;
 }
-export async function authorize(request,env){
-  if(env.LOCAL_DEV==='true'&&['127.0.0.1','localhost','[::1]'].includes(new URL(request.url).hostname))return;
-  if(!env.ACCESS_TEAM_DOMAIN||!env.ACCESS_AUD)throw error('管理登录尚未配置，请先完成 Cloudflare Access 设置',503);
-  const issuer='https://'+env.ACCESS_TEAM_DOMAIN.replace(/^https:\/\//,'').replace(/\/$/,'');
-  const token=request.headers.get('Cf-Access-Jwt-Assertion')||request.headers.get('cookie')?.match(/(?:^|;\s*)CF_Authorization=([^;]+)/)?.[1];
-  if(!token)throw error('请先登录案例管理页面',401);
-  try{let keys=keySets.get(issuer);if(!keys){keys=createRemoteJWKSet(new URL(issuer+'/cdn-cgi/access/certs'));keySets.set(issuer,keys);}await jwtVerify(token,keys,{issuer,audience:env.ACCESS_AUD,algorithms:['RS256']});}
-  catch{throw error('登录已过期，请重新打开案例管理页面',401);}
+const toHex=bytes=>[...bytes].map(byte=>byte.toString(16).padStart(2,'0')).join('');
+const toBase64url=bytes=>btoa(String.fromCharCode(...new Uint8Array(bytes))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+function fromBase64url(value){const base64=value.replace(/-/g,'+').replace(/_/g,'/')+'='.repeat((4-value.length%4)%4);return Uint8Array.from(atob(base64),char=>char.charCodeAt(0));}
+function hexBytes(value){return Uint8Array.from(value.match(/.{2}/g).map(pair=>parseInt(pair,16)));}
+let sessionKey;
+function getSessionKey(){return sessionKey||=(crypto.subtle.importKey('raw',hexBytes(adminPasswordHash),{name:'HMAC',hash:'SHA-256'},false,['sign','verify']));}
+async function passwordMatches(value){
+  const actual=toHex(new Uint8Array(await crypto.subtle.digest('SHA-256',encoder.encode(typeof value==='string'?value:''))));
+  let difference=actual.length^adminPasswordHash.length;
+  for(let index=0;index<adminPasswordHash.length;index++)difference|=(actual.charCodeAt(index)||0)^(adminPasswordHash.charCodeAt(index)||0);
+  return difference===0;
+}
+function cookieValue(request,name){return request.headers.get('Cookie')?.match(new RegExp('(?:^|;\\s*)'+name+'=([^;]+)'))?.[1]||'';}
+async function createSession(){
+  const payload=toBase64url(encoder.encode(JSON.stringify({expires:Math.floor(Date.now()/1000)+sessionLifetime})));
+  const signature=toBase64url(await crypto.subtle.sign('HMAC',await getSessionKey(),encoder.encode(payload)));
+  return payload+'.'+signature;
+}
+async function hasAdminSession(request){
+  try{
+    const [payload,signature,...extra]=cookieValue(request,sessionName).split('.');
+    if(!payload||!signature||extra.length)return false;
+    if(!await crypto.subtle.verify('HMAC',await getSessionKey(),fromBase64url(signature),encoder.encode(payload)))return false;
+    return JSON.parse(new TextDecoder().decode(fromBase64url(payload))).expires>Math.floor(Date.now()/1000);
+  }catch{return false;}
+}
+async function requireAdmin(request){if(!await hasAdminSession(request))throw error('请输入管理密码后再保存',401);}
+async function login(request){
+  if(!request.headers.get('Content-Type')?.startsWith('application/json'))throw error('请通过登录表单提交密码');
+  let body;try{body=JSON.parse(new TextDecoder().decode(await readBytes(request,2048)));}catch(cause){if(cause.status)throw cause;throw error('密码读取失败');}
+  if(!await passwordMatches(body.password))throw error('密码不正确，请重试',401);
+  return new Response(JSON.stringify({ok:true}),{headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Set-Cookie':`${sessionName}=${await createSession()}; Path=/; Max-Age=${sessionLifetime}; HttpOnly; Secure; SameSite=Strict`}});
 }
 function sameOrigin(request){const origin=request.headers.get('origin');if(origin!==new URL(request.url).origin)throw error('请从案例管理页面提交',403);}
 async function readBytes(request,limit){
@@ -70,21 +95,19 @@ export default {async fetch(request,env){
   try{
     if(path==='/api/config'&&request.method==='GET')return json({storage:'cloudflare',googleMapsApiKey:env.GOOGLE_MAPS_API_KEY||'',googleMapsMapId:env.GOOGLE_MAPS_MAP_ID||''});
     if(path==='/api/cases'&&request.method==='GET')return json({items:await cases(env)});
+    if(path==='/api/admin/session'&&request.method==='GET')return json({authenticated:await hasAdminSession(request)});
+    if(path==='/api/admin/login'&&request.method==='POST'){sameOrigin(request);return await login(request);}
     if(path.startsWith('/media/')&&['GET','HEAD'].includes(request.method)){
       const key=path.slice(7);if(!/^photos\/[a-f0-9-]+\.(jpg|png|webp)$/.test(key))return json({error:'图片不存在'},404);
       const object=await env.PHOTOS.get(key);if(!object)return json({error:'图片不存在'},404);
       const headers=new Headers({'X-Content-Type-Options':'nosniff'});object.writeHttpMetadata(headers);headers.set('ETag',object.httpEtag);return new Response(request.method==='HEAD'?null:object.body,{headers});
     }
-    if(path.startsWith('/api/')||path.startsWith('/admin')){
-      await authorize(request,env);
-      if(!['GET','HEAD'].includes(request.method))sameOrigin(request);
-      if(path==='/api/photos'&&request.method==='POST')return await upload(request,env);
-      if(path.startsWith('/api/cases/')&&request.method==='PUT')return await putCase(request,env,path.slice('/api/cases/'.length));
-      if(path.startsWith('/api/'))return json({error:'此操作不可用'},405);
-    }
+    if(path==='/api/photos'&&request.method==='POST'){sameOrigin(request);await requireAdmin(request);return await upload(request,env);}
+    if(path.startsWith('/api/cases/')&&request.method==='PUT'){sameOrigin(request);await requireAdmin(request);return await putCase(request,env,path.slice('/api/cases/'.length));}
+    if(path.startsWith('/api/'))return json({error:'此操作不可用'},405);
     const response=await env.ASSETS.fetch(request);
     const headers=new Headers(response.headers);headers.set('X-Content-Type-Options','nosniff');
-    if(path.startsWith('/admin')){headers.set('Cache-Control','no-store');headers.set('Content-Security-Policy',"frame-ancestors 'self'");}
+    if(path.startsWith('/admin')){headers.set('Cache-Control','no-store');headers.set('Content-Security-Policy',"frame-ancestors 'self'");headers.set('Referrer-Policy','no-referrer');}
     return new Response(response.body,{status:response.status,headers});
   }catch(e){console.error('Pisell API error:',e);return json({error:e.status?e.message:'服务暂时不可用，请检查存储配置后重试'},e.status||503);}
 }};

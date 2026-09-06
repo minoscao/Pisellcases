@@ -8,7 +8,13 @@
 <body class="admin-page">
   <header class="admin-header"><a href="admin.html" class="admin-brand" aria-label="Pisell 案例库"><img src="assets/pisell-logo.png" alt="Pisell"><span>案例管理</span></a><a class="button" href="atlas.html?editor=1">查看地图 ↗</a></header>
   <main class="admin-main">
-    <div id="page-message" class="page-message" role="status" aria-live="polite">正在加载案例库…</div>
+    <div id="page-message" class="page-message" role="status" aria-live="polite">正在验证管理权限…</div>
+    <section id="login-view" class="login-view" hidden aria-labelledby="login-title">
+      <div class="login-card">
+        <p class="eyebrow">PISELL / PRIVATE</p><h1 id="login-title">案例管理</h1><p class="login-copy">请输入管理密码继续。</p>
+        <form id="login-form" novalidate><div id="login-error" class="error-summary" role="alert" tabindex="-1" hidden></div><div class="field"><label for="admin-password">管理密码</label><div class="password-input"><input id="admin-password" type="password" autocomplete="current-password" required aria-describedby="login-error"><button id="toggle-password" type="button" aria-label="显示密码" aria-pressed="false">显示</button></div></div><button id="login-submit" class="button primary" type="submit">进入管理</button></form>
+      </div>
+    </section>
     <section id="library-view" hidden>
       <div class="page-heading"><div><p class="eyebrow">CASE LIBRARY</p><h1>项目合集 <span id="case-count"></span></h1></div><a class="button primary" href="admin.html?new=1">＋ Add new</a></div>
       <div class="library-toolbar"><label class="sr-only" for="project-search">搜索项目</label><input id="project-search" type="search" placeholder="搜索项目、城市或地址"><label class="sr-only" for="type-filter">项目类型</label><select id="type-filter"><option value="">所有类型</option></select></div>
